@@ -23,9 +23,12 @@ main:
 	syscall #reads the register v0 for op code, sees 8 and asks the user to input a string
 
 	la $a0, Tell_Output #loads addres from the memory and stores it into a0
-	li $v0, 4 $loads the value 4 into the register v0, 4 is the op code for print string
+	li $v0, 4 #loads the value 4 into the register v0, 4 is the op code for print string
 	syscall #reads the op code in v0, sees 4 and prints the string located in a0
 
 	la $a0, insert_into #loads the insert_into address into a0
 	li $v0, 4 #loads 4 into register v0 which is the op code for print string
-	syscall reads v0, sees 4 and prints the string in a0
+	syscall #reads v0, sees 4 and prints the string in a0
+	
+	li $v0, 10 #loads the op code to exit the program
+	syscall #exits the program after reading v0
