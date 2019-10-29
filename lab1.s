@@ -37,7 +37,7 @@ main:
 	L1: add $t1, $a0, $t0 #t1 now has the address of the  index of the string
 		lb $t2, 0($t1) #t2 now has the value of the  index of the string
 		addi, $t2, $t2, -48 #convert the character to ASCII
-		la $a0, $t2 #store it into register a0
+		sw $a0, 0($t2) #store it into register a0
 		li $v0, 4 #print the string in register a0
 		syscall#call so it prints
 		addi $t0,$t0,1#increment
