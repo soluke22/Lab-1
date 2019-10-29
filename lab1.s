@@ -13,6 +13,6 @@ Tell_Output:
 
 main:
 
-	la $a0, Ask_Input #loads the address for Ask_Input into register a0
+	la $a0, Ask_Input #loads Ask_Input and stores it into register a0
 	li $v0, 4 #loads the value 4 into the register v0, 4 has the op code for print string 
-	syscall #reads the register v0 for its op code, see it's 4 and prints the string in register a0
+	syscall #reads the register v0 for its op code, see it's 4 and prints the string located in register a0
