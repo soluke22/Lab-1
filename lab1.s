@@ -1,3 +1,13 @@
+#N = 26+9 = 35, Base-35 from '0' to '9', 'a' to 'y', 'A' to 'Y', any character after y is ignored
+#M = 35-10 = 25
+#Steps:
+# 1) Take in a string of characters 
+# 2) Convert them
+# 3) Sum up the converted numbers
+# 4) Print out the number
+# 5) Exit the program
+
+
 .data
 
 insert_into:
