@@ -35,8 +35,9 @@ main:
 	li $v0, 4
 	syscall
 	
-	
-	
+	la $a0, str
+	li $v0, 4
+	syscall
 
 	
 	li $v0, 10 #loads the op code to exit the program
