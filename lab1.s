@@ -13,7 +13,7 @@
 str:
 	.space 32
 input:
-	.asciizz "\Enter the character: \n"
+	.asciiz "\Enter the character: \n"
 
 
 output:
@@ -26,8 +26,9 @@ main:
 	la $a0, input
 	syscall
 
-	
-
+	li $v0, 8
+	la $a0, input
+	syscall	
 
 	
 	li $v0, 10 #loads the op code to exit the program
