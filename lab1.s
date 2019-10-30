@@ -38,9 +38,14 @@ main:
 	li $t1, 0#initialize the loop variable
 	li $t2, 11 #creates an exit condition
 	Loop:
-	
+		beq $t2,$t1, Exit
+		lbu $t3,$t1(str)#this should load a byte from the str
 		
-	
+
+
+		
+	Exit:
+
 	la $a0, str
 	li $v0, 4
 	syscall
