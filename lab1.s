@@ -26,9 +26,17 @@ main:
 	la $a0, input
 	syscall
 
-	li $v0, 8
-	la $a0, input
-	syscall	
+	la $a0, str
+	la $a1, str
+	li, $v0
+	syscall
+	
+	la $a0, output
+	li $v0, 4
+	syscall
+	
+	
+	
 
 	
 	li $v0, 10 #loads the op code to exit the program
