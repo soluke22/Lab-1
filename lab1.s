@@ -28,7 +28,7 @@ main:
 
 	la $a0, str
 	la $a1, str
-	li, $v0
+	li $v0, 8
 	syscall
 	
 	la $a0, output
