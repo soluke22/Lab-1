@@ -26,14 +26,20 @@ main:
 	la $a0, input
 	syscall
 
-	la $a0, str
-	la $a1, str
-	li $v0, 8
+	la $a0, str #takes in a string
+	la $a1, 10 #this is for the string length
+	li $v0, 8 #this inputs a string
 	syscall
 	
-	la $a0, output
-	li $v0, 4
+	la $a0, output #loads the address of the output ascii string
+	li $v0, 4 #op code 4 prints the string
 	syscall
+	
+	li $t1, 0#initialize the loop variable
+	li $t2, 11 #creates an exit condition
+	Loop:
+	
+		
 	
 	la $a0, str
 	li $v0, 4
