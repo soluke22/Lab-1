@@ -39,7 +39,12 @@ main:
 	li $t2, 11 #creates an exit condition
 	Loop:
 		beq $t2,$t1, Exit
-		lbu $t3,$t1(str)#this should load a byte from the str
+		addu $a1,$a1,$t1 #a1 = &str[t1]
+		lbu $a0,($a1)#this should load a byte from the str
+		li $v0, 11
+		syscall
+		addi $t1, $t1, 1 #increments $t1
+		j Loop
 		
 
 
