@@ -12,6 +12,8 @@
 
 str:
 	.space 32
+input:
+	.asciizz "\Enter the character: \n"
 
 
 output:
@@ -21,9 +23,10 @@ output:
 
 main:
 	li $v0, 4
-	la $a0, str
-	li $a1, 11
+	la $a0, input
 	syscall
+
+	
 
 
 	
