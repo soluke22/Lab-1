@@ -14,15 +14,9 @@ input:
 	.asciiz "\Input: \n"
 
 
-output:
-	.asciiz "\n Output: \n "
-
 .text
 
 main:
-	li $v0, 4
-	la $a0, input
-	syscall
 	
 	la $a0, input #takes in a string
 	la $a1, 11 #this is for the string length
@@ -67,9 +61,6 @@ main:
 				
 	Exit:
 	
-	la $a0, output #loads the address of the output ascii string
-	li $v0, 4 #op code 4 prints the string
-	syscall
 	move $a0, $t5
 	li $v0, 1
 	syscall
