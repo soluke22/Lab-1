@@ -49,13 +49,16 @@ main:
 		addu $t4, $t4, -48
 		add $t5, $t5, $t4 
 		j afterloop
-	lower:
-		bge $t4, 97, lower
+	lower:	
+		bge $t4, 123, afterloop
 		addu $t4, $t4, -87
 		add $t5, $t4, $t5
 		j afterloop
 
 	upper:
+		bge $t4, 97, lower
+		ble $t4, 97, afterloop
+		bge $t4, 88, afterloop
 		addu $t4, $t4, -55
 		add $t5, $t4, $t5
 		j afterloop
