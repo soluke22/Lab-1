@@ -27,7 +27,7 @@ main:
 	syscall
 
 	la $a0, str #takes in a string
-	la $a1, 10 #this is for the string length
+	la $a1, 11 #this is for the string length
 	li $v0, 8 #this inputs a string
 	syscall
 	
@@ -36,11 +36,11 @@ main:
 	syscall
 	
 	li $t1, 0#initialize the loop variable
-	li $t2, 11 #creates an exit condition
+	li $t2, 10 #creates an exit condition
 	Loop:
 		beq $t2,$t1, Exit
 		addu $a1,$a1,$t1 #a1 = &str[t1]
-		lbu $a0,($a1)#this should load a byte from the str
+		lb $a0,($a1)#this should load a byte from the str
 		li $v0, 11
 		syscall
 		addi $t1, $t1, 1 #increments $t1
