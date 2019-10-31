@@ -42,29 +42,34 @@ main:
 		beq $t0,$t1, Exit
 		add $t3, $t0, $a0
 		lb $t4, ($t3)
+		bge $t4, 97, lower
+		bge $t4, 65, upper
 		bge $t4, 57, decimal
 		ble $t4, 48, decimal
-		bge $t4, 65, upper
 		ble $t4, 89, upper
-		bge $t4, 97, lower
 		ble $t4, 171, lower
+	afterloop:
 		addi $t0, 1
 		j loop
 		
 	decimal:
-		add $t5, $t4, $t5
+		addu $t4, $t4, -48
+		add $t5, $t5, $t4 
+		j afterloop
 	lower:
-		addu $t4, $t4, -17
+		addu $t4, $t4, -87
 		add $t5, $t4, $t5
+		j afterloop
 
 	upper:
-		addu $t4, $t4, -49
+		addu $t4, $t4, -55
 		add $t5, $t4, $t5
+		j afterloop
 				
 	Exit:
-
-	la $a0, str
-	li $v0, 4
+	
+	move $a0, $t5
+	li $v0, 1
 	syscall
 
 	
