@@ -36,18 +36,27 @@ main:
 	syscall
 	
 	li $t0, 0 #initialize the loop variable
+	li $t5, 0 #sum variable
 	li $t1, 11 #creates an exit condition
 	loop:
 		beq $t0,$t1, Exit
-		add $t0, $t0, $a0
-		lb $s1, ($t0)
-		li $v0, 11
-		syscall
-		addi $t0, 1 #increments $t1
+		add $t3, $t0, $a0
+		lb $t4, ($t3)
+		bge $t4, 57, decimal
+		ble $t4, 48, decimal
+		bge $t4, 65, upper
+		ble $t4, 89, upper
+		bge $t4, 97, lower
+		ble $t4, 171, lower
+		addi $t0, 1
 		j loop
 		
+	decimal:
+		add $t5, $t4, $t5
+	lower:
+		addu $t5, $t5, 
 
-
+	upper:
 		
 	Exit:
 
