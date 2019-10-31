@@ -25,7 +25,7 @@ main:
 	syscall
 	
 	la $a0, input #takes in a string
-	la $a1, 10 #this is for the string length
+	la $a1, 11 #this is for the string length
 	li $v0, 8 #this inputs a string
 	move $t6, $a0
 	syscall
@@ -33,18 +33,13 @@ main:
 	li $t0, 0 #initialize the loop variable
 	li $t5, 0 #sum variable
 	li $t3, 0 #initliaze counter variable
-	li $t4, 0 #another counter variable
+	li $t4, 48 #another counter variable
 	li $t1, 11 #creates an exit condition
 	loop:
 		beq $t0,$t1, Exit
 		add $t3, $t0, $t6
-		lb $t4, 0($t6)
+		lb $t4, 0($t3)
 		bge $t4, 48, decimal
-		bge $t4, 97, lower
-		bge $t4, 65, upper
-		bge $t4, 57, decimal
-		ble $t4, 89, upper
-		addi $t0, 1
 	afterloop:
 		addi $t0, 1
 		j loop
