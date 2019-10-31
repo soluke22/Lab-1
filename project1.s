@@ -50,7 +50,7 @@ main:
 		add $t5, $t5, $t4 
 		j afterloop
 	lower:	
-		bge $t4, 123, afterloop
+		bge $t4, 122, afterloop
 		addu $t4, $t4, -87
 		add $t5, $t4, $t5
 		j afterloop
