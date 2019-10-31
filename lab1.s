@@ -54,10 +54,13 @@ main:
 	decimal:
 		add $t5, $t4, $t5
 	lower:
-		addu $t5, $t5, 
+		addu $t4, $t4, -17
+		add $t5, $t4, $t5
 
 	upper:
-		
+		addu $t4, $t4, -49
+		add $t5, $t4, $t5
+				
 	Exit:
 
 	la $a0, str
