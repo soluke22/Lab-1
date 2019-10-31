@@ -39,8 +39,8 @@ main:
 	li $t1, 11 #creates an exit condition
 	loop:
 		beq $t0,$t1, Exit
-		addu $a1,$a0,$t1 #a1 = &str[t1]
-		lb $t0, 0($a0)#this should load a byte from the str
+		add $t0, $t0, $a0
+		lb $s1, ($t0)
 		li $v0, 11
 		syscall
 		addi $t0, 1 #increments $t1
