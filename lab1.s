@@ -32,10 +32,6 @@ main:
 	syscall
 	move $a0, $v0
 	
-	la $a0, output #loads the address of the output ascii string
-	li $v0, 4 #op code 4 prints the string
-	syscall
-	
 	li $t0, 0 #initialize the loop variable
 	li $t5, 0 #sum variable
 	li $t3, 0 #initliaze counter variable
@@ -44,7 +40,7 @@ main:
 	loop:
 		beq $t0,$t1, Exit
 		add $t3, $t0, $a0
-		lbu $t4, ($t3)
+		lb $t4, ($t3)
 		bge $t4, 97, lower
 		bge $t4, 65, upper
 		bge $t4, 57, decimal
@@ -71,6 +67,9 @@ main:
 				
 	Exit:
 	
+	la $a0, output #loads the address of the output ascii string
+	li $v0, 4 #op code 4 prints the string
+	syscall
 	move $a0, $t5
 	li $v0, 1
 	syscall
