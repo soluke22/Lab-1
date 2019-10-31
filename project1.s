@@ -35,17 +35,19 @@ main:
 	li $t3, 0 #initliaze counter variable
 	li $t4, 48 #another counter variable
 	li $t1, 11 #creates an exit condition
+
 	loop:
-		beq $t0,$t1, Exit
+		beq $t0, $t1, Exit
 		add $t3, $t0, $t6
 		lb $t4, 0($t3)
 		bge $t4, 48, decimal
+
 	afterloop:
 		addi $t0, 1
 		j loop
 		
 	decimal:
-		bge $t4, 65, upper
+		bge $t4, 58, upper
 		addu $t4, $t4, -48
 		add $t5, $t5, $t4 
 		j afterloop
