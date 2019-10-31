@@ -15,7 +15,7 @@ input:
 
 
 output:
-	.asciiz "\n Output:  "
+	.asciiz "\n Output: \n "
 
 .text
 
@@ -60,7 +60,7 @@ main:
 	upper:
 		bge $t4, 97, lower
 		ble $t4, 97, afterloop
-		bge $t4, 88, afterloop
+		bge $t4, 89, afterloop
 		addu $t4, $t4, -55
 		add $t5, $t4, $t5
 		j afterloop
