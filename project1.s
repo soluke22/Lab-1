@@ -11,11 +11,11 @@
 .data
 
 input:
-	.asciiz "\Enter the character: \n"
+	.asciiz "\Input: \n"
 
 
 output:
-	.asciiz "\n The result is:  "
+	.asciiz "\n Output:  "
 
 .text
 
