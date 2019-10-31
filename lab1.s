@@ -35,8 +35,8 @@ main:
 	li $v0, 4 #op code 4 prints the string
 	syscall
 	
-	#li $t1, 0#initialize the loop variable
-	#li $t2, 10 #creates an exit condition
+	li $t1, 0#initialize the loop variable
+	li $t2, 10 #creates an exit condition
 	#Loop:
 		#beq $t2,$t1, Exit
 		#addu $a1,$a1,$t1 #a1 = &str[t1]
