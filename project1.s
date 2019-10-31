@@ -59,8 +59,8 @@ main:
 
 	upper:
 		bge $t4, 97, lower
-		ble $t4, 97, afterloop
-		bge $t4, 89, afterloop
+		bge $t4, 90, afterloop
+		ble $t4, 64, afterloop
 		addu $t4, $t4, -55
 		add $t5, $t4, $t5
 		j afterloop
