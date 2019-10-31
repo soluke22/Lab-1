@@ -10,8 +10,6 @@
 
 .data
 
-str:
-	.space 32
 input:
 	.asciiz "\Enter the character: \n"
 
@@ -26,10 +24,10 @@ main:
 	la $a0, input
 	syscall
 	
-	la $a0, str #takes in a string
+	la $a0, input #takes in a string
 	la $a1, 11 #this is for the string length
 	li $v0, 8 #this inputs a string
-	move $t5, $a0
+	move $t6, $a0
 	syscall
 	
 	li $t0, 0 #initialize the loop variable
@@ -40,7 +38,7 @@ main:
 	loop:
 		beq $t0,$t1, Exit
 		add $t3, $t0, $t6
-		lb $t4, $t0($t6)
+		lb $t4, 0($t6)
 		bge $t4, 97, lower
 		bge $t4, 65, upper
 		bge $t4, 57, decimal
