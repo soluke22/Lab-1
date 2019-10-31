@@ -35,16 +35,16 @@ main:
 	li $v0, 4 #op code 4 prints the string
 	syscall
 	
-	li $t1, 0#initialize the loop variable
-	li $t2, 10 #creates an exit condition
-	#Loop:
-		#beq $t2,$t1, Exit
-		#addu $a1,$a1,$t1 #a1 = &str[t1]
-		#lb $a0,($a1)#this should load a byte from the str
-		#li $v0, 11
-		#syscall
-		#addi $t1, $t1, 1 #increments $t1
-		#j Loop
+	li $t0, 0 #initialize the loop variable
+	li $t1, 10 #creates an exit condition
+	loop:
+	beq $t1,$t0, Exit
+	addu $a1,$a1,$t1 #a1 = &str[t1]
+	lb $a0,$t0($a1)#this should load a byte from the str
+	li $v0, 11
+	syscall
+	addi $t0, $t0, 1 #increments $t1
+		#j loop
 		
 
 
